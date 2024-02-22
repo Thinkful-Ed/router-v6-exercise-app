@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom"; // added this import
 
 function UserProfile() {
   const [user, setUser] = useState({});
+  const { userId } = useParams(); // Correctly extracting 'userId' from the URI
 
-  const {userId} = useParams();
   
   useEffect(() => {
     async function loadUser() {
